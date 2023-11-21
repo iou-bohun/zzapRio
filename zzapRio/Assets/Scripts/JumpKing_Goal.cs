@@ -1,18 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class JumpKing_Goal : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] float rotationSpeed;
+    private void Update()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        rotationSpeed = Mathf.PingPong(Time.time*5f, 2f) + 0.5f;
+        transform.Rotate(new Vector3(0, 0, rotationSpeed));
     }
 }

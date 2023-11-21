@@ -90,11 +90,15 @@ public class Jumper : MonoBehaviour
         }
     }
 
-
+    /// <summary>
+    /// 클리어 조건
+    /// </summary>
+    /// <param name="goal">골 오브젝트</param>
     private void OnTriggerEnter2D(Collider2D goal)
     {
         if (goal.gameObject.tag == "Goal")
         {
+            //골에 도착했을때 
             Debug.Log("Win");
         }
     }
