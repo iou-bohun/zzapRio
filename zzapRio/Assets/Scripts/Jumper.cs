@@ -13,9 +13,11 @@ public class Jumper : MonoBehaviour
     [SerializeField] float dirForce = 150;// 좌우 이동 최소
 
     Rigidbody2D rb;
+    Renderer render;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        render = GetComponent<Renderer>();
     }
     void Update()
     {
@@ -24,6 +26,8 @@ public class Jumper : MonoBehaviour
         {
             clickTime = Time.time; // 클릭한 시간 기록
             isReady = true;
+
+            render.material.color = Color.yellow;//클릭시 색 변경 
         }
 
         // 마우스 왼쪽 버튼이 떼어졌을 때
@@ -34,6 +38,7 @@ public class Jumper : MonoBehaviour
 
             // 점프 함수 호출 및 클릭한 시간을 기반으로 힘 조절
             Jump(jumpDuration, dir);
+            render.material.color = Color.white;//원래 색으로 변경
         }
     }
 
@@ -68,15 +73,22 @@ public class Jumper : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Ground")//지면과 충돌시 
+        if (collision.gameObject.tag == "Ground")//지면과 충돌시 
         {
             //점프킹 움직임 멈추기
             rb.velocity = Vector2.zero;
             rb.angularVelocity = 0f;
 
             //변수들 초기화 
-            isJumping=false;
+            isJumping = false;
             isReady = false;
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Goal")
+        {
+            Debug.Log("Win");
         }
     }
 }
