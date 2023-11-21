@@ -8,7 +8,9 @@ public class Jumper : MonoBehaviour
     private float clickTime; // 마우스 클릭한  시점
     public bool isJumping = false; // 점프 중인지 여부
     private bool isReady = false; // 웅크리는지 여부 
-    private float minJumpForce = 5f;
+    [SerializeField] float minJumpForce = 5f; // 최소 점프 
+    [SerializeField] float maxJumpForce = 15f; // 최대 점프
+    [SerializeField] float dirForce = 150;// 좌우 이동 최소
 
     Rigidbody2D rb;
     private void Awake()
@@ -41,12 +43,22 @@ public class Jumper : MonoBehaviour
 
         // 클릭 시간과 점프크기 곲
         float calculatedJumpForce = jumpForce * jumpDuration;
+
         // 최소 점프 크기
         if (calculatedJumpForce < minJumpForce)
         {
             calculatedJumpForce = minJumpForce;
         }
+
+        //최대 점프 크기 
+        else if(calculatedJumpForce >maxJumpForce)
+        {
+            calculatedJumpForce = maxJumpForce;
+        }
+
+        //좌우 점프 힘 
         float calculatedDirForce = dir * 100;
+        Debug.Log(calculatedJumpForce); //점프 힘 확인 
 
         // 캐릭터에게 힘을 가하고 점프
         rb.AddForce(Vector3.up * calculatedJumpForce,ForceMode2D.Impulse);
@@ -54,13 +66,15 @@ public class Jumper : MonoBehaviour
 
     }
 
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Ground")
+        if(collision.gameObject.tag == "Ground")//지면과 충돌시 
         {
+            //점프킹 움직임 멈추기
             rb.velocity = Vector2.zero;
             rb.angularVelocity = 0f;
+
+            //변수들 초기화 
             isJumping=false;
             isReady = false;
         }
