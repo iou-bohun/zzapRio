@@ -42,6 +42,11 @@ public class Jumper : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 플레이어 점프
+    /// </summary>
+    /// <param name="jumpDuration">클릭한 시간 </param>
+    /// <param name="dir">점프하는 방향 </param>
     void Jump(float jumpDuration, float dir)
     {
         isJumping = true;
@@ -84,9 +89,11 @@ public class Jumper : MonoBehaviour
             isReady = false;
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+
+
+    private void OnTriggerEnter2D(Collider2D goal)
     {
-        if (collision.gameObject.tag == "Goal")
+        if (goal.gameObject.tag == "Goal")
         {
             Debug.Log("Win");
         }
