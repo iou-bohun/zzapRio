@@ -7,7 +7,14 @@ public class Bear : MonoBehaviour
 {
     [SerializeField] float moveSpeed;
     [SerializeField] bool isGood  = false; // 맥주가 PerfectZone에 도달 했는지
+    [SerializeField] GameObject[] bears;
     private void Update()
+    {
+        BearMove();
+        FillBear();
+    }
+
+    void BearMove()
     {
         //마우스 클릭하는 동안 
         if (Input.GetMouseButton(0))
@@ -26,6 +33,22 @@ public class Bear : MonoBehaviour
             {
                 Debug.Log("Fail");
             }
+        }
+    }
+
+    void FillBear()
+    {
+        if(this.transform.localPosition.y >= bears[0].transform.localPosition.y)
+        {
+            bears[0].SetActive(true);
+        }
+        if(this.transform.localPosition.y >= bears[1].transform.localPosition.y)
+        {
+            bears[1].SetActive(true);
+        }
+        if(this.transform.localPosition.y >= bears[2].transform.localPosition.y)
+        {
+            bears[2].SetActive(true);
         }
     }
 
