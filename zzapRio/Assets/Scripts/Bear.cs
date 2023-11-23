@@ -13,6 +13,7 @@ public class Bear : MonoBehaviour
         BearMove();
         FillBear();
         FailCheck();
+        Debug.Log(isGood);
     }
 
     void BearMove()
@@ -69,10 +70,17 @@ public class Bear : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        isGood = true;
+        if (collision.gameObject.tag == "PerfectZone")
+        {
+            isGood = true;
+        }
+        
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        isGood = false;
+        if (collision.gameObject.tag == "PerfectZone")
+        {
+            isGood = false;
+        }
     }
 }
