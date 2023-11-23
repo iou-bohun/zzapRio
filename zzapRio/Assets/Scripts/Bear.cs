@@ -12,6 +12,7 @@ public class Bear : MonoBehaviour
     {
         BearMove();
         FillBear();
+        FailCheck();
     }
 
     void BearMove()
@@ -27,17 +28,21 @@ public class Bear : MonoBehaviour
         {
             if (isGood)
             {
+                //성공
                 Debug.Log("Win");
             }
             else
             {
+                // 실패 
                 Debug.Log("Fail");
             }
         }
     }
 
+    //맥주잔 체우기 
     void FillBear()
     {
+        //맥주 위치에 따라 맥주 이미지 생성
         if(this.transform.localPosition.y >= bears[0].transform.localPosition.y)
         {
             bears[0].SetActive(true);
@@ -49,6 +54,16 @@ public class Bear : MonoBehaviour
         if(this.transform.localPosition.y >= bears[2].transform.localPosition.y)
         {
             bears[2].SetActive(true);
+        }
+    }
+
+    void FailCheck()
+    {
+        //맥주잔을 넘어갈 경우
+        if(this.transform.localPosition.x > 0.4)
+        {
+            //실패
+            Debug.Log("Fail");
         }
     }
 
