@@ -406,6 +406,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\uB9E5\uC8FC\uC794"
       objectReference: {fileID: 0}
+    - target: {fileID: 5212302404621378228, guid: ebf76b5d40ddf1b498ca2c6417ca461a, type: 3}
+      propertyPath: m_TagString
+      value: PerfectZone
+      objectReference: {fileID: 0}
     - target: {fileID: 5667528902410373054, guid: ebf76b5d40ddf1b498ca2c6417ca461a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -444,6 +448,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5667528902410373054, guid: ebf76b5d40ddf1b498ca2c6417ca461a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8097014507679558247, guid: ebf76b5d40ddf1b498ca2c6417ca461a, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
