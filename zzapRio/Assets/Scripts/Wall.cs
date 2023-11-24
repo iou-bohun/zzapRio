@@ -11,6 +11,7 @@ public class Wall : MonoBehaviour
        collisionDirection = collisionDirection.normalized;
        Rigidbody2D rigid = collision.gameObject.GetComponent<Rigidbody2D>();
        // 반대 방향으로 힘을 가하면서 물체를 밀어냄
-       rigid.AddForce(Vector2.right*pushForce);
+       rigid.AddForce(Vector2.right*Jumper.Force*pushForce);
+        Debug.Log(Jumper.Force);
     }
 }

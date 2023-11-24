@@ -11,6 +11,8 @@ public class Jumper : MonoBehaviour
     [SerializeField] float minJumpForce = 5f; // 최소 점프 
     [SerializeField] float maxJumpForce = 15f; // 최대 점프
     [SerializeField] float dirForce = 150;// 좌우 이동 최소
+    public static float Force; //점프, 이동 힘 합한수치
+
 
     Rigidbody2D rb;
     Renderer render;
@@ -68,7 +70,8 @@ public class Jumper : MonoBehaviour
 
         //좌우 점프 힘 
         float calculatedDirForce = dir * dirForce;
-        Debug.Log(calculatedJumpForce); //점프 힘 확인 
+
+        Force = calculatedDirForce * calculatedJumpForce;// 종합 힘 
 
         // 캐릭터에게 힘을 가하고 점프
         rb.AddForce(Vector3.up * calculatedJumpForce,ForceMode2D.Impulse);
