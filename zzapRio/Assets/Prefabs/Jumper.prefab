@@ -112,7 +112,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!58 &3139784153577720363
 CircleCollider2D:
@@ -161,8 +161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8c6aa3f7a047b04b8bda51b7e3848fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 18
+  jumpForce: 12
   isJumping: 0
   minJumpForce: 5
   maxJumpForce: 15
-  dirForce: 150
+  dirForce: 170
