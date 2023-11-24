@@ -17,6 +17,13 @@ public class DataManager : MonoBehaviour
                 return instance;
         }
     }
+    private int score;
+    public int Score
+    {
+        get { return score; }
+        set { score = value; }
+    }
+
     private void Awake()
     {
         if(instance == null)
