@@ -67,7 +67,7 @@ public class Jumper : MonoBehaviour
         }
 
         //좌우 점프 힘 
-        float calculatedDirForce = dir * 100;
+        float calculatedDirForce = dir * dirForce;
         Debug.Log(calculatedJumpForce); //점프 힘 확인 
 
         // 캐릭터에게 힘을 가하고 점프
