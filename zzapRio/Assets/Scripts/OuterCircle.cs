@@ -11,6 +11,7 @@ public class OuterCircle : MonoBehaviour
     
     private void Update()
     {
+        Debug.Log(isPerfect);
         UpdateSacle();
         if(Input.GetKeyDown(KeyCode.Q))
         {

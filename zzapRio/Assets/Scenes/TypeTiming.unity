@@ -533,24 +533,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e1571d6d82af4a48a55ce465c9b238d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1778507738 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5271990343218788535, guid: ca308d9b37e05d345b23fd80cf0edad4, type: 3}
-  m_PrefabInstance: {fileID: 8090185016415706358}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1778507740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1778507738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf22b3cbbab95db408362955a268ed76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
 --- !u!1001 &8090185016415706358
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -562,14 +544,6 @@ PrefabInstance:
     - target: {fileID: 1354254890114571844, guid: ca308d9b37e05d345b23fd80cf0edad4, type: 3}
       propertyPath: m_Name
       value: node
-      objectReference: {fileID: 0}
-    - target: {fileID: 2851591885192595036, guid: ca308d9b37e05d345b23fd80cf0edad4, type: 3}
-      propertyPath: m_Name
-      value: "\uC904\uC5B4\uB4DC\uB294\uC6D0 \uBC14\uAE65 "
-      objectReference: {fileID: 0}
-    - target: {fileID: 5271990343218788535, guid: ca308d9b37e05d345b23fd80cf0edad4, type: 3}
-      propertyPath: m_Name
-      value: "\uC90B\uC5B4\uB4DC\uB294\uC6D0 "
       objectReference: {fileID: 0}
     - target: {fileID: 9005141947961446758, guid: ca308d9b37e05d345b23fd80cf0edad4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -614,10 +588,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5271990343218788535, guid: ca308d9b37e05d345b23fd80cf0edad4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1778507740}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca308d9b37e05d345b23fd80cf0edad4, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
