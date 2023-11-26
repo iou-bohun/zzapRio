@@ -8,12 +8,14 @@ public class OuterCircle : MonoBehaviour
 {
     [SerializeField] float speed;
     [SerializeField] bool isPerfect;
+
     
     private void Update()
     {
+
         Debug.Log(isPerfect);
         UpdateSacle();
-        if(Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(Node.randomKey))
         {
             if (isPerfect)
             {
