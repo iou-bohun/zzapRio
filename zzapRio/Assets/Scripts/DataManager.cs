@@ -36,4 +36,9 @@ public class DataManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
     }
+
+    public void ResetScore()
+    {
+        score = 0;
+    }
 }
