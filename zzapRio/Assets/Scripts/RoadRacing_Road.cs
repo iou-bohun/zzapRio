@@ -18,6 +18,7 @@ public class RoadRacing_Road : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("hit");
         if(!collision.GetComponent<RoadRacing_PlayerMovement>().gameOver)
         {
             Debug.Log("GameOver");

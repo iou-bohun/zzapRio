@@ -20,7 +20,10 @@ public class RoadRacing_PlayerMovement : MonoBehaviour
     {
         if (!gameOver)
         {
-            transform.Translate(Vector3.right * speed * Input.GetAxis("Mouse X") * Time.deltaTime);
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePosition.y = -4.4f;
+            mousePosition.z = 0;
+            transform.position = mousePosition;
         }
     }
 }
