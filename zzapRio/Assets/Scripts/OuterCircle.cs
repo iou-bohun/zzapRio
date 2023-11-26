@@ -28,8 +28,7 @@ public class OuterCircle : MonoBehaviour
         }
     }
 
-
-
+    //점점 크기 작아지게
     void UpdateSacle()
     {
         transform.localScale = new Vector3(transform.localScale.x - 1f * speed * Time.deltaTime,
