@@ -679,7 +679,7 @@ MonoBehaviour:
   - {x: -0.13691324, y: 1.5855876}
   - {x: -0.124774665, y: 1.2778516}
   - {x: 0.27636153, y: 1.1100824}
-  - {x: 0.63297737, y: 0.8720791}
+  - {x: 0.63297737, y: 0.872079}
   - {x: 0.8161111, y: 0.71438193}
   - {x: 1.0897248, y: 0.6455107}
   - {x: 6.0247602, y: 0.64663583}
@@ -725,7 +725,7 @@ SpriteShapeRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_MaskInteraction: 0
   m_ShapeTexture: {fileID: 2800000, guid: b281b91a70a624a0da1c43adc1c30c7b, type: 3}
@@ -740,7 +740,7 @@ SpriteShapeRenderer:
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   m_LocalAABB:
-    m_Center: {x: 0.0011205673, y: 0.8129437, z: 0}
+    m_Center: {x: 0.0011205673, y: 0.81294376, z: 0}
     m_Extent: {x: 13.316746, y: 1.3530154, z: 0}
   m_SpriteSortPoint: 0
 --- !u!68 &1482896599
@@ -797,7 +797,7 @@ EdgeCollider2D:
   - {x: -0.13691324, y: 1.5855876}
   - {x: -0.124774665, y: 1.2778516}
   - {x: 0.27636153, y: 1.1100824}
-  - {x: 0.63297737, y: 0.8720791}
+  - {x: 0.63297737, y: 0.872079}
   - {x: 0.8161111, y: 0.71438193}
   - {x: 1.0897248, y: 0.6455107}
   - {x: 6.0247602, y: 0.64663583}
@@ -1117,7 +1117,7 @@ SpriteShapeRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_MaskInteraction: 0
   m_ShapeTexture: {fileID: 2800000, guid: b281b91a70a624a0da1c43adc1c30c7b, type: 3}
@@ -1523,7 +1523,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
