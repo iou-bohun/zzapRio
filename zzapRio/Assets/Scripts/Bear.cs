@@ -31,6 +31,7 @@ public class Bear : MonoBehaviour
             {
                 //¼º°ø
                 Debug.Log("Win");
+                DataManager.Instance.Score++;
             }
             else
             {
