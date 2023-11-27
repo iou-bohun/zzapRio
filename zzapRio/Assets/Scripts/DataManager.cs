@@ -17,20 +17,23 @@ public class DataManager : MonoBehaviour
                 return instance;
         }
     }
-    private int score = 0;
-    private int maxScore = 0;
-    public int Score
-    {
-        get { return score; }
-        set { if (score >= maxScore)
+
+    private int score=0;
+
+
+        set
+        {
+            score = value;
+            if(score > maxScore)
             {
                 maxScore = score;
             }
-            else
-            {
-                score = value;
-            };
         }
+    }
+    public int MaxScore
+    {
+        get { return maxScore; }
+
     }
 
     private void Awake()
