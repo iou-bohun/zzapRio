@@ -19,11 +19,14 @@ public class OuterCircle : MonoBehaviour
         {
             if (isPerfect)
             {
-                Debug.Log("Win");
+                //성공시
+                DataManager.Instance.Score++;
+                GameManager.Instance.LoadNextScene();
             }
             else
             {
-                Debug.Log("Lose");
+                //실패시
+                GameManager.Instance.LoadRetryScene();
             }
         }
     }
