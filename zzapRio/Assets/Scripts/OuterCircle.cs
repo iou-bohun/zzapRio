@@ -19,10 +19,12 @@ public class OuterCircle : MonoBehaviour
         {
             if (isPerfect)
             {
-                Debug.Log("Win");
+                //성공시
+                DataManager.Instance.Score++;
             }
             else
             {
+                //실패시
                 Debug.Log("Lose");
             }
         }
