@@ -31,13 +31,13 @@ public class Bear : MonoBehaviour
             {
                 //성공
                 Debug.Log("Win");
-                DataManager.Instance.Score+=4;
-                Debug.Log(DataManager.Instance.Score);
+                DataManager.Instance.Score++;
+                GameManager.Instance.LoadNextScene();
             }
             else
             {
                 // 실패 
-                Debug.Log("Fail");
+                GameManager.Instance.LoadRetryScene();
             }
         }
     }
