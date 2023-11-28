@@ -19,6 +19,9 @@ public class ClawMachine_Machine : MonoBehaviour
 
     private bool movingRight = true;
 
+    [SerializeField]
+    private bool success = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -99,6 +102,17 @@ public class ClawMachine_Machine : MonoBehaviour
             transform.Translate(Vector3.up * speed * Time.deltaTime);
         }
         //팔이 다 올라가고 난 후 Spot 오브젝트 자식에 인형이 있는지 없는지로 게임 성공, 실패 여부 확인하면 될 듯
+        if(transform.position.y > 5)
+        {
+            if(success == true)
+            {
+                GameManager.Instance.LoadNextScene();
+            }
+            else
+            {
+                GameManager.Instance.LoadRetryScene();
+            }
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -109,6 +123,7 @@ public class ClawMachine_Machine : MonoBehaviour
             if (collision != null && collision.transform.name == "Doll")
             {
                 collision.transform.parent = Spot;
+                success = true;
             }
         }
     }
