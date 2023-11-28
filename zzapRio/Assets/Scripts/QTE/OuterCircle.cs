@@ -16,16 +16,13 @@ public class OuterCircle : MonoBehaviour
     }
     private void Update()
     {
-
-        Debug.Log(isPerfect);
         UpdateSacle();
         if (Input.GetKeyDown(Node.randomKey))
         {
             if (isPerfect)
             {
-                //¼º°ø½Ã
+               GameManager.Instance.LoadNextScene();
                 DataManager.Instance.Score++;
-                GameManager.Instance.LoadNextScene();
             }
             else
             {

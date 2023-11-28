@@ -103,8 +103,8 @@ public class Jumper : MonoBehaviour
         if (goal.gameObject.tag == "Goal")
         {
             //°ñ¿¡ µµÂøÇßÀ»¶§ 
-            DataManager.Instance.Score++;
             GameManager.Instance.LoadNextScene();
+            DataManager.Instance.Score++;
         }
     }
 }

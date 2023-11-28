@@ -7,5 +7,6 @@ public class GameManagerProxy : MonoBehaviour
     public void Restart()
     {
         GameManager.Instance.LoadNextScene();
+        DataManager.Instance.Score = 0;
     }
 }

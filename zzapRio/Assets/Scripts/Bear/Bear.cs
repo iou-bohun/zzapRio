@@ -36,7 +36,6 @@ public class Bear : MonoBehaviour
             if (isGood)
             {
                 //¼º°ø
-                Debug.Log("Win");
                 DataManager.Instance.Score++;
                 GameManager.Instance.LoadNextScene();
             }

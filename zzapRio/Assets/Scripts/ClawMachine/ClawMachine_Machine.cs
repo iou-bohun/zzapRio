@@ -111,6 +111,7 @@ public class ClawMachine_Machine : MonoBehaviour
             if(success == true)
             {
                 GameManager.Instance.LoadNextScene();
+                DataManager.Instance.Score++;
             }
             else
             {

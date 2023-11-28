@@ -31,15 +31,18 @@ public class DataManager : MonoBehaviour
         
     }
 
-    private int score=11;
+    [SerializeField]
+    private int score=0;
     public int Score
     {
         get { return score; }
         set
         { 
             score = value;
-        if(score> maxScore ) 
-                maxScore = score; 
+            if(score > maxScore)
+            {
+                maxScore = score;   
+            }
         }
     }
     [SerializeField]private int maxScore = 0;
