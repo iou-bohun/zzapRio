@@ -8,4 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/RetryScene.unity
+    guid: 3ad24d82f2b65fd44897de5d0adb3c82
+  - enabled: 1
+    path: Assets/Scenes/BearScene.unity
+    guid: 6d43fc73e173bf14595a8f8afb9f6a79
+  - enabled: 1
+    path: Assets/Scenes/TypeTiming.unity
+    guid: 88930b4f49f52224d952c591e37c6421
+  - enabled: 1
+    path: Assets/Scenes/JumpKing.unity
+    guid: 104ffd6d06a11c0438869b20f1fcf687
   m_configObjects: {}
