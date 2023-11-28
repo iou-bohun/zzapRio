@@ -31,6 +31,10 @@ public class ClawMachine_Machine : MonoBehaviour
 
         //인형 뽑기로 인형을 집었을 때 인형을 붙일 Spot 오브젝트 가져오기
         Spot = transform.Find("Spot");
+
+        //스피드 조절
+        speed = 3;
+        speed += DataManager.Instance.Score / 10;
     }
 
     // Update is called once per frame

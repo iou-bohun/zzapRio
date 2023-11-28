@@ -12,7 +12,7 @@ public class Bear : MonoBehaviour
     private void Start()
     {
         moveSpeed = 2;
-        moveSpeed += DataManager.Instance.Score / 10;
+        moveSpeed += DataManager.Instance.Score / 10; // socre10마다 속도 1증가
     }
     private void Update()
     {
