@@ -22,8 +22,11 @@ public class ClawMachine_Machine : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //팔 움직임 표현을 위해 팔 게임 오브젝트 가져오기
         LeftArm = transform.Find("Arms/LeftArm").gameObject;
         RightArm = transform.Find("Arms/RightArm").gameObject;
+
+        //인형 뽑기로 인형을 집었을 때 인형을 붙일 Spot 오브젝트 가져오기
         Spot = transform.Find("Spot");
     }
 
@@ -37,14 +40,17 @@ public class ClawMachine_Machine : MonoBehaviour
 
         if (!isGrab)
         {
+            //인형뽑기 팔 좌우 움직임
             Moving();
         }
         else if(isGrab && !isDone)
         {
+            //인형뽑기 팔 아래로 내래기, 인형 집기 움직임 표현
             Grab();
         }
         else if (isDone)
         {
+            //인형 집기 움직임이 끝난 후 원래 자리로 올리기
             Raise();
         }
     }
@@ -92,10 +98,12 @@ public class ClawMachine_Machine : MonoBehaviour
         {
             transform.Translate(Vector3.up * speed * Time.deltaTime);
         }
+        //팔이 다 올라가고 난 후 Spot 오브젝트 자식에 인형이 있는지 없는지로 게임 성공, 실패 여부 확인하면 될 듯
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        //인형 집기 움직임이 끝났을 때 인형 콜라이더와 겹쳐있을 때 인형 오브젝트를 Spot의 자식으로 넣음
         if (isDone)
         {
             if (collision != null && collision.transform.name == "Doll")

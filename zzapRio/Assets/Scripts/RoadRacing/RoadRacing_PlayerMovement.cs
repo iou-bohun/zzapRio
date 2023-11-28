@@ -18,6 +18,7 @@ public class RoadRacing_PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Player 오브젝트 움직임 구현
         if (!gameOver)
         {
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
