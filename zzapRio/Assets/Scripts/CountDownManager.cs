@@ -13,6 +13,8 @@ public class CountDownManager : MonoBehaviour
     public string countDownEndMessage;
     public CanvasGroup canvasGroup;
 
+    public UIManager uiManager;
+
     public void StartCountDown()
     {
         countDownCount = countDownStartNumber;
@@ -42,6 +44,10 @@ public class CountDownManager : MonoBehaviour
         if(countDownCount >= 0 )
         {
             StartCoroutine(CountDownCo());
+        }
+        else
+        {
+            uiManager.Retry();
         }
     }
 }
