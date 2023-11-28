@@ -43,4 +43,6 @@ public class GameManager : MonoBehaviour
         //다음 게임 랜덤 로드
         SceneManager.LoadScene(Random.Range(2,SceneManager.sceneCountInBuildSettings)); //0 씬은 메인화면 1 씬은 Retry
     }
+
+
 }
