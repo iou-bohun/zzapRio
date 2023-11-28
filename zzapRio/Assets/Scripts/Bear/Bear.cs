@@ -8,6 +8,12 @@ public class Bear : MonoBehaviour
     [SerializeField] float moveSpeed;
     [SerializeField] bool isGood  = false; // 맥주가 PerfectZone에 도달 했는지
     [SerializeField] GameObject[] bears;
+
+    private void Start()
+    {
+        moveSpeed = 2;
+        moveSpeed += DataManager.Instance.Score / 10; // socre10마다 속도 1증가
+    }
     private void Update()
     {
         BearMove();

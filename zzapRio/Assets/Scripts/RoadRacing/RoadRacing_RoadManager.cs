@@ -23,6 +23,9 @@ public class RoadRacing_RoadManager : MonoBehaviour
         // 현제 Road 오브젝트가 다 내려온 후 다음 오브젝트를 이어 붙여 내려주기 위해 현재, 다음 Road 오브젝트 저장.
         currentRoad = roads;
         nextRoad = roads;
+        // 스피드 조정
+        speed = 3;
+        speed += DataManager.Instance.Score / 10;
     }
 
     // Update is called once per frame
