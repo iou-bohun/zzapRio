@@ -7,6 +7,8 @@ public class Subrunker_BulletManager : MonoBehaviour
     // Bullet 프리팹을 관리, 랜덤한 위치에 생성하도록 조정하는 매니저 스크립트
     [SerializeField]
     public Subrunker_Bullet bullet;
+    [SerializeField]
+    private float spawnTime;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +21,14 @@ public class Subrunker_BulletManager : MonoBehaviour
 
         // 이후 코루틴으로 주기적으로 Bullet 오브젝트 생성
         StartCoroutine(SpawnBulletCoroutine());
+
+        // 총알 생성 주기 레벨디자인
+        spawnTime = 0.5f;
+        spawnTime -= (DataManager.Instance.Score / 10)*0.1f;
+        if (spawnTime < 0.1f)
+        {
+            spawnTime = 0.1f;
+        }
     }
 
     // Update is called once per frame
@@ -61,7 +71,7 @@ public class Subrunker_BulletManager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(spawnTime);
             SpawnBullet();
         }
     }
