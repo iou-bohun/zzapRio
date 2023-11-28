@@ -313,7 +313,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
   m_FlipX: 0
@@ -860,6 +860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27333f8a853f218408d4b25851e57898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxScore: 0
 --- !u!1 &1686365927
 GameObject:
   m_ObjectHideFlags: 0
@@ -934,6 +935,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 314087460335047329, guid: 07ce37936a82edf4c921f11eb3b37082, type: 3}
+  spawnTime: 0
 --- !u!4 &1771205761
 Transform:
   m_ObjectHideFlags: 0
@@ -1054,6 +1056,10 @@ PrefabInstance:
     - target: {fileID: 3492130778153937714, guid: 07ce37936a82edf4c921f11eb3b37082, type: 3}
       propertyPath: m_Name
       value: Bullet
+      objectReference: {fileID: 0}
+    - target: {fileID: 8115075131498280844, guid: 07ce37936a82edf4c921f11eb3b37082, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8420416463172515883, guid: 07ce37936a82edf4c921f11eb3b37082, type: 3}
       propertyPath: m_LocalPosition.x

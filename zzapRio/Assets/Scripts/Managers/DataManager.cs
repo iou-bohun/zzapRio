@@ -31,7 +31,7 @@ public class DataManager : MonoBehaviour
         
     }
 
-    private int score=0;
+    private int score=11;
     public int Score
     {
         get { return score; }
