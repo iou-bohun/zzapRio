@@ -17,6 +17,8 @@ public class CountDownManager : MonoBehaviour
 
     public void StartCountDown()
     {
+        uiManager.StartUIAnimation();
+
         countDownCount = countDownStartNumber;
         countDownCanvas.gameObject.SetActive(true);
 
@@ -47,7 +49,7 @@ public class CountDownManager : MonoBehaviour
         }
         else
         {
-            uiManager.Retry();
+            uiManager.RetryUIAnimation();
         }
     }
 }
