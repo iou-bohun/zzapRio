@@ -14,6 +14,7 @@ public class Timer : MonoBehaviour
 
         if(timer < 0)
         {
+            DataManager.Instance.Score++;
             GameManager.Instance.LoadNextScene();
         }
     }

@@ -5,6 +5,9 @@ using UnityEngine;
 public class DataManager : MonoBehaviour
 {
     private static DataManager instance;
+
+    [SerializeField]
+    public bool isNewRecord = false;
     public static DataManager Instance
     {
         get
@@ -42,6 +45,11 @@ public class DataManager : MonoBehaviour
             if(score > maxScore)
             {
                 maxScore = score;   
+                isNewRecord = true;
+            }
+            else
+            {
+                isNewRecord = false;
             }
         }
     }
@@ -51,5 +59,6 @@ public class DataManager : MonoBehaviour
         get { return maxScore; }
     }
 
-    
+
+
 }

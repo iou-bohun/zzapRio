@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class GameManagerProxy : MonoBehaviour
 {
-    public void Restart()
+    public UIManager1 uiManager;
+
+    private void Start()
     {
-        GameManager.Instance.LoadNextScene();
-        DataManager.Instance.Score = 0;
+        uiManager.RetryUIAnimation();
     }
 }

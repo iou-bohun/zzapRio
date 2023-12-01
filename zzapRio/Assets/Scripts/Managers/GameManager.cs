@@ -34,9 +34,7 @@ public class GameManager : MonoBehaviour
 
     public void LoadRetryScene()
     {
-        //재시작 씬 로드 
-        StartCoroutine("SceneDelay");
-        SceneManager.LoadScene("RetryScene");
+        SceneManager.LoadScene("retry");
     }
 
     public void LoadNextScene()

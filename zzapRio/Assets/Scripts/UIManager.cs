@@ -5,6 +5,7 @@ using DG.Tweening;
 using TMPro;
 using UnityEngine.UI;
 using System.ComponentModel;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -25,41 +26,15 @@ public class UIManager : MonoBehaviour
 
     public bool newRecord;
     public ParticleSystem confettiParticle;
-    public void RetryUIAnimation()
+
+    private void Start()
     {
-        mainCanvas.gameObject.SetActive(true);
-
-        scoreText.rectTransform.anchoredPosition = Vector2.zero;
-        canvasGroup.alpha = 0.0f;
-        newBestText.rectTransform.anchoredPosition = Vector2.zero;
-        PlayButtonImage.rectTransform.anchoredPosition = Vector2.zero;
-
-        if(newRecord)
-        {
-            newBestText.gameObject.SetActive(true);
-            confettiParticle.Play();
-        }
-        else
-        {
-            newBestText.gameObject.SetActive(false);
-        }
-
-
-        scoreText.rectTransform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-
-        scoreText.rectTransform.DOScale(new Vector3(1.2f, 1.2f, 1.2f), 0.2f);
-
-        scoreText.rectTransform.DOAnchorPosY(270f, 1f).SetDelay(2f);
-        scoreText.rectTransform.DOScale(new Vector3(1f, 1f, 1f), 1f).SetDelay(2f);
-
-        canvasGroup.DOFade(1f, 1f).SetDelay(2f);
-
-        newBestText.rectTransform.DOAnchorPosY(13f, 1f).SetDelay(2f);
-        PlayButtonImage.rectTransform.DOAnchorPosY(-380f, 1f).SetDelay(2f);
+        scoreText.text = DataManager.Instance.MaxScore.ToString();
     }
 
     public void StartUIAnimation()
     {
+        DataManager.Instance.Score = 0;
         scoreText.rectTransform.DOAnchorPosX(720f, 1f).SetEase(Ease.InExpo);
         PlayButtonImage.rectTransform.DOAnchorPosX(720f, 1.2f).SetEase(Ease.InExpo);
         newBestText.rectTransform.DOAnchorPosX(720f, 1.5f).SetEase(Ease.InExpo).OnComplete(() =>
@@ -102,7 +77,7 @@ public class UIManager : MonoBehaviour
         }
         else
         {
-            RetryUIAnimation();
+            GameManager.Instance.LoadNextScene();
         }
     }
 }
