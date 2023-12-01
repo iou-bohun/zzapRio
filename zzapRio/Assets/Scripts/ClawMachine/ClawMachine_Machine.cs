@@ -25,14 +25,14 @@ public class ClawMachine_Machine : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //ÆÈ ¿òÁ÷ÀÓ Ç¥ÇöÀ» À§ÇØ ÆÈ °ÔÀÓ ¿ÀºêÁ§Æ® °¡Á®¿À±â
+        //íŒ” ì›€ì§ì„ í‘œí˜„ì„ ìœ„í•´ íŒ” ê²Œì„ ì˜¤ë¸Œì íŠ¸ ê°€ì ¸ì˜¤ê¸°
         LeftArm = transform.Find("Arms/LeftArm").gameObject;
         RightArm = transform.Find("Arms/RightArm").gameObject;
 
-        //ÀÎÇü »Ì±â·Î ÀÎÇüÀ» Áı¾úÀ» ¶§ ÀÎÇüÀ» ºÙÀÏ Spot ¿ÀºêÁ§Æ® °¡Á®¿À±â
+        //ì¸í˜• ë½‘ê¸°ë¡œ ì¸í˜•ì„ ì§‘ì—ˆì„ ë•Œ ì¸í˜•ì„ ë¶™ì¼ Spot ì˜¤ë¸Œì íŠ¸ ê°€ì ¸ì˜¤ê¸°
         Spot = transform.Find("Spot");
 
-        //½ºÇÇµå Á¶Àı
+        //ìŠ¤í”¼ë“œ ì¡°ì ˆ
         speed = 3;
         speed += DataManager.Instance.Score / 10;
     }
@@ -47,17 +47,17 @@ public class ClawMachine_Machine : MonoBehaviour
 
         if (!isGrab)
         {
-            //ÀÎÇü»Ì±â ÆÈ ÁÂ¿ì ¿òÁ÷ÀÓ
+            //ì¸í˜•ë½‘ê¸° íŒ” ì¢Œìš° ì›€ì§ì„
             Moving();
         }
         else if(isGrab && !isDone)
         {
-            //ÀÎÇü»Ì±â ÆÈ ¾Æ·¡·Î ³»·¡±â, ÀÎÇü Áı±â ¿òÁ÷ÀÓ Ç¥Çö
+            //ì¸í˜•ë½‘ê¸° íŒ” ì•„ë˜ë¡œ ë‚´ë˜ê¸°, ì¸í˜• ì§‘ê¸° ì›€ì§ì„ í‘œí˜„
             Grab();
         }
         else if (isDone)
         {
-            //ÀÎÇü Áı±â ¿òÁ÷ÀÓÀÌ ³¡³­ ÈÄ ¿ø·¡ ÀÚ¸®·Î ¿Ã¸®±â
+            //ì¸í˜• ì§‘ê¸° ì›€ì§ì„ì´ ëë‚œ í›„ ì›ë˜ ìë¦¬ë¡œ ì˜¬ë¦¬ê¸°
             Raise();
         }
     }
@@ -105,7 +105,8 @@ public class ClawMachine_Machine : MonoBehaviour
         {
             transform.Translate(Vector3.up * speed * Time.deltaTime);
         }
-        //ÆÈÀÌ ´Ù ¿Ã¶ó°¡°í ³­ ÈÄ Spot ¿ÀºêÁ§Æ® ÀÚ½Ä¿¡ ÀÎÇüÀÌ ÀÖ´ÂÁö ¾ø´ÂÁö·Î °ÔÀÓ ¼º°ø, ½ÇÆĞ ¿©ºÎ È®ÀÎÇÏ¸é µÉ µí
+        //íŒ”ì´ ë‹¤ ì˜¬ë¼ê°€ê³  ë‚œ í›„ Spot ì˜¤ë¸Œì íŠ¸ ìì‹ì— ì¸í˜•ì´ ìˆëŠ”ì§€ ì—†ëŠ”ì§€ë¡œ ê²Œì„ ì„±ê³µ, ì‹¤íŒ¨ ì—¬ë¶€ í™•ì¸í•˜ë©´ ë  ë“¯
+
         if(transform.position.y > 5)
         {
             if(success == true)
@@ -122,7 +123,7 @@ public class ClawMachine_Machine : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        //ÀÎÇü Áı±â ¿òÁ÷ÀÓÀÌ ³¡³µÀ» ¶§ ÀÎÇü Äİ¶óÀÌ´õ¿Í °ãÃÄÀÖÀ» ¶§ ÀÎÇü ¿ÀºêÁ§Æ®¸¦ SpotÀÇ ÀÚ½ÄÀ¸·Î ³ÖÀ½
+        //ì¸í˜• ì§‘ê¸° ì›€ì§ì„ì´ ëë‚¬ì„ ë•Œ ì¸í˜• ì½œë¼ì´ë”ì™€ ê²¹ì³ìˆì„ ë•Œ ì¸í˜• ì˜¤ë¸Œì íŠ¸ë¥¼ Spotì˜ ìì‹ìœ¼ë¡œ ë„£ìŒ
         if (isDone)
         {
             if (collision != null && collision.transform.name == "Doll")
