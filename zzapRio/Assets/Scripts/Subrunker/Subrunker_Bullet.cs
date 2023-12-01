@@ -35,6 +35,7 @@ public class Subrunker_Bullet : MonoBehaviour
         {
             // Player 오브젝트에 충돌했을 때 실행. 충돌시 GameOver 상태로 전환하면 될 듯
             Debug.Log("hit");
+            GameManager.Instance.LoadRetryScene();
         }
     }
 }

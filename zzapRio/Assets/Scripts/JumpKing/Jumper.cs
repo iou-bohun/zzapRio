@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class Jumper : MonoBehaviour
@@ -102,7 +103,8 @@ public class Jumper : MonoBehaviour
         if (goal.gameObject.tag == "Goal")
         {
             //°ñ¿¡ µµÂøÇßÀ»¶§ 
-            Debug.Log("Win");
+            GameManager.Instance.LoadNextScene();
+            DataManager.Instance.Score++;
         }
     }
 }

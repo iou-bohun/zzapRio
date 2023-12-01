@@ -17,32 +17,39 @@ public class DataManager : MonoBehaviour
                 return instance;
         }
     }
-    private int score = 0;
-    private int maxScore = 0;
-    public int Score
-    {
-        get { return score; }
-        set { if (score >= maxScore)
-            {
-                maxScore = score;
-            }
-            else
-            {
-                score = value;
-            };
-        }
-    }
-
     private void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(this.gameObject);
         }
-        else if(instance != this)
+        else if (instance != this)
         {
             Destroy(this.gameObject);
         }
-        DontDestroyOnLoad(gameObject);
+        
     }
+
+    [SerializeField]
+    private int score=0;
+    public int Score
+    {
+        get { return score; }
+        set
+        { 
+            score = value;
+            if(score > maxScore)
+            {
+                maxScore = score;   
+            }
+        }
+    }
+    [SerializeField]private int maxScore = 0;
+    public int MaxScore
+    {
+        get { return maxScore; }
+    }
+
+    
 }

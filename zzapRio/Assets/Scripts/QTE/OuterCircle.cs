@@ -9,21 +9,25 @@ public class OuterCircle : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] bool isPerfect;
 
-    
+    private void Start()
+    {
+        speed = 1f;
+        speed += (DataManager.Instance.Score / 10)*0.5f;
+    }
     private void Update()
     {
-
-        Debug.Log(isPerfect);
         UpdateSacle();
         if (Input.GetKeyDown(Node.randomKey))
         {
             if (isPerfect)
             {
-                Debug.Log("Win");
+               GameManager.Instance.LoadNextScene();
+                DataManager.Instance.Score++;
             }
             else
             {
-                Debug.Log("Lose");
+                //½ÇÆÐ½Ã
+                GameManager.Instance.LoadRetryScene();
             }
         }
     }
