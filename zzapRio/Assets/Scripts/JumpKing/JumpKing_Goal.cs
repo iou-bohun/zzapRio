@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class JumpKing_Goal : MonoBehaviour
 {
-    [SerializeField] float rotationSpeed; // 회전 속도
-    private void Update()
+    private void Start()
     {
-        rotationSpeed = Mathf.PingPong(Time.time*5f, 1.5f) + 0.5f; // 0.5 ~ 2.5까지 반복해서 값을가지는 속도
-        transform.Rotate(new Vector3(0, 0, rotationSpeed));// 회전
+        transform.DORotate(new Vector3(0, 0, 360),2.5f, RotateMode.FastBeyond360).SetEase(Ease.Linear).SetLoops(-1);
     }
 }
